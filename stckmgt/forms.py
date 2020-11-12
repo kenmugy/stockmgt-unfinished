@@ -36,7 +36,7 @@ class AddItemForm(forms.ModelForm):
 class SearchItemForm(forms.ModelForm):
     item_no = forms.CharField( max_length=50 , required=False)
     color = forms.CharField( max_length=50 , required=False)
-    
+    export_to_CSV = forms.BooleanField(required=False)
     class Meta:
         model = Stock
         fields = ["item_no", "color"]

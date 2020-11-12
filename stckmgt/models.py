@@ -19,8 +19,19 @@ item_choices = (
     ("V196YK", "V196YK"),
 )
 
+class Category(models.Model):
+    name = models.CharField(max_length=50, blank = True, null = True)
+
+    def __str__(self):
+        return self.name
+
+    # def get_absolute_url(self):
+    #     return reverse("Category_detail", kwargs={"pk": self.pk})
+
+
 class Stock(models.Model):
     item_no = models.CharField(max_length=50, choices = item_choices, blank = False, null = True)
+    # category = models.ForeignKey(Category, on_delete=models.CASCADE)
     color = models.CharField( max_length=55, blank = False, null = True)
     quantity = models.IntegerField("Quantity MTS",default=0 )
     opening_stck = models.IntegerField(default=0 )

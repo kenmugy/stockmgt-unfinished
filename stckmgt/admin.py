@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Stock
+from .models import *
 from .forms import AddItemForm
 
 
@@ -11,9 +11,7 @@ class StockCreateAdmin(admin.ModelAdmin):
     list_filter = ["item_no", "color"]
 
 
-# @admin.register(Stock)
-# class ViewAdmin(admin.ModelAdmin):
-#     pass
+# admin.site.register(Category)
     
 
 

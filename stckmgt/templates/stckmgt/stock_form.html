@@ -1,6 +1,8 @@
+{% extends 'stckmgt/base.html' %} {% block body %}
 <div>
   <form action="" method="post">
     {% csrf_token %} {{form.as_p}}
     <button>Add Item</button>
   </form>
 </div>
+{% endblock body %}

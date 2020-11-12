@@ -2,7 +2,6 @@ from django.contrib import admin
 from .models import Stock
 from .forms import AddItemForm
 
-# Register your models here.
 
 @admin.register(Stock)
 class StockCreateAdmin(admin.ModelAdmin):

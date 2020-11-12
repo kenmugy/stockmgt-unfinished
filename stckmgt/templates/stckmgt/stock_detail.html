@@ -1,26 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
-<body>
-    <table>
-        <th>
-            <td>Item</td>
-            <td>color</td>
-            <td>issued by</td>
-        </th>
-        <tbody>
-            {% for item in items %}
-            <tr>
-                <td>{{item.item_no}}</td>
-                <td>{{item.color}}</td>
-                <td>{{item.issued_by}}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</body>
-</html>
+{% extends 'stckmgt/base.html' %}
+{% block body %}
+<table>
+    <th>
+        <td>Item</td>
+        <td>color</td>
+        <td>issued by</td>
+    </th>
+    <tbody>
+        {% for item in items %}
+        <tr>
+            <td>{{item.item_no}}</td>
+            <td>{{item.color}}</td>
+            <td>{{item.issued_by}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock body %}

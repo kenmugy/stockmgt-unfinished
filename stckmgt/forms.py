@@ -5,3 +5,9 @@ class AddItemForm(forms.ModelForm):
     class Meta:
         model = Stock
         fields = ['item_no', 'color', 'quantity', 'issued_by']
+
+class SearchItemForm(forms.ModelForm):
+    
+    class Meta:
+        model = Stock
+        fields = ["item_no", "color"]

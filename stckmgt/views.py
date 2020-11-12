@@ -20,7 +20,7 @@ def home(request):
     
 def details(request):
     form = SearchItemForm(request.POST or None)
-    items = Stock.objects.all().order_by('last_updated')
+    items = Stock.objects.all().order_by('-last_updated')
     context = {'form': form, 'items': items}
     if form.is_valid():
         query_set = Stock.objects.filter(item_no__icontains = form['item_no'].value(), color__icontains = form['color'].value())

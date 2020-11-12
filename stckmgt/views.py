@@ -1,15 +1,13 @@
 from django.shortcuts import render
-from django.views.generic import CreateView
+from django.views.generic import CreateView, ListView
 from .models import Stock
-# from .forms import AddItem
 
-# Create your views here.
 
 class StockCreateView(CreateView):
     model = Stock
-    # template_name = 'stckmgt/stock_form.html'
     fields = ['item_no', 'color', 'quantity', 'opening_stck']
 
-# def add_item(request):
-#     form = AddItem(request.POST | None)
-#     return render(request, 'stckmgt/stock_form.html', {'form': form})
+class StockListView(ListView):
+    model = Stock
+    template_name = 'stckmgt/stock_detail.html'
+    context_object_name = 'items'

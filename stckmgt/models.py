@@ -15,7 +15,7 @@ class Stock(models.Model):
     last_updated = models.DateTimeField( auto_now=True, auto_now_add=False)
 
     def get_absolute_url(self):
-        return reverse('details')
+        return reverse('list')
 
     def __str__(self):
         return f"item: {self.item_no} | Color: {self.color}"

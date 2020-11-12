@@ -17,7 +17,7 @@
   <tbody>
     {% for item in items %}
     <tr>
-      <td>{{item.item_no}}</td>
+      <td><a href="{% url 'detail' item.pk %}">{{item.item_no}}</a></td>
       <td>{{item.color}}</td>
       <td>{{item.issued_by}}</td>
       <td>{{item.opening_stck}}</td>

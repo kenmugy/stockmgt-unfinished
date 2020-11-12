@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import CreateView, ListView, UpdateView, DeleteView
+from django.views.generic import CreateView, ListView, UpdateView, DeleteView, DetailView
 from django.contrib.messages import info
 from .models import Stock
 from .forms import SearchItemForm
@@ -19,6 +19,10 @@ class StockUpdateView(UpdateView):
     fields = ["opening_stck"]
 
 class StockDeleteView(DeleteView):
+    model = Stock
+    success_url = 'stock_list/'
+
+class StockDetailView(DetailView):
     model = Stock
 
 

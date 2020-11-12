@@ -6,4 +6,5 @@ from .models import Stock
 
 class StockCreateView(CreateView):
     model = Stock
-    template_name = "stckmgt/add_item.html"
+    fields = ['item_no', 'color', 'quantity', 'opening_stck']
+    

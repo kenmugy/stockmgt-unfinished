@@ -9,5 +9,6 @@ class StockCreateView(CreateView):
 
 class StockListView(ListView):
     model = Stock
+    ordering = '-last_updated'
     template_name = 'stckmgt/stock_detail.html'
     context_object_name = 'items'

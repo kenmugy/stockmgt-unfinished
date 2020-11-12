@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-# from django.utils import timezone
+from django.urls import reverse
 
 # Create your models here.
 class Stock(models.Model):
@@ -13,6 +13,9 @@ class Stock(models.Model):
     issued_to = models.CharField("Issued to",max_length=50, blank= True)
     phone_number = models.CharField( max_length=50, blank = True)
     last_updated = models.DateTimeField( auto_now=True, auto_now_add=False)
+
+    # def get_absolute_url(self):
+    #     return reverse('detail', kwargs={'pk': self.pk})
 
     def __str__(self):
         return f"item: {self.item_no} | Color: {self.color}"

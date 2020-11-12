@@ -23,10 +23,10 @@ class AddItemForm(forms.ModelForm):
         
         return color
     
-class UpdateItemForm(forms.ModelForm):
-    class Meta:
-        model = Stock
-        fields = [ 'quantity']
+# class UpdateItemForm(forms.ModelForm):
+#     class Meta:
+#         model = Stock
+#         fields = [ 'quantity']
     
 
 class SearchItemForm(forms.ModelForm):

@@ -1,0 +1,6 @@
+{% extends 'stckmgt/base.html' %} {% load crispy_forms_tags %} {% block body %}
+<form action="" method="post">
+  {% csrf_token %} {{form|crispy}}
+  <button class="btn btn-outline-danger">Update</button>
+</form>
+{% endblock body %}

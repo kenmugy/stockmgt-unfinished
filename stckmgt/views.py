@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, ListView, UpdateView
 from django.contrib.messages import info
 from .models import Stock
 from .forms import SearchItemForm
@@ -14,6 +14,11 @@ class StockListView(ListView):
     ordering = '-last_updated'
     template_name = 'stckmgt/stock_detail.html'
     context_object_name = 'items'
+
+class StockUpdateView(UpdateView):
+    model = Stock
+    fields = ["opening_stck"]
+
 
 def home(request):
     return render(request, 'stckmgt/home.html')

@@ -10,6 +10,8 @@
       <th scope="col">item</th>
       <th scope="col">color</th>
       <th scope="col">isssued by</th>
+      <th scope="col">opening stock</th>
+      <th scope="col">action</th>
     </tr>
   </thead>
   <tbody>
@@ -18,6 +20,10 @@
       <td>{{item.item_no}}</td>
       <td>{{item.color}}</td>
       <td>{{item.issued_by}}</td>
+      <td>{{item.opening_stck}}</td>
+      <td>
+        <a href="{% url 'update' item.pk %}" class="btn btn-success">update</a>
+      </td>
     </tr>
     {% endfor %}
   </tbody>

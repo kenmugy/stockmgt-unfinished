@@ -12,3 +12,7 @@ class StockListView(ListView):
     ordering = '-last_updated'
     template_name = 'stckmgt/stock_detail.html'
     context_object_name = 'items'
+
+def home(request):
+    return render(request, 'stckmgt/home.html')
+    

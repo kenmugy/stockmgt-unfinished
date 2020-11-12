@@ -4,8 +4,8 @@ from django.urls import reverse
 
 # Create your models here.
 class Stock(models.Model):
-    item_no = models.CharField(max_length=50)
-    color = models.CharField( max_length=55)
+    item_no = models.CharField(max_length=50, blank = True)
+    color = models.CharField( max_length=55, blank = True)
     quantity = models.IntegerField("Quantity MTS",default=0 )
     opening_stck = models.IntegerField(default=0 )
     closing_stck = models.IntegerField(default=0 )

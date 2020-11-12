@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import CreateView, ListView, UpdateView
+from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 from django.contrib.messages import info
 from .models import Stock
 from .forms import SearchItemForm
@@ -12,12 +12,14 @@ class StockCreateView(CreateView):
 class StockListView(ListView):
     model = Stock
     ordering = '-last_updated'
-    template_name = 'stckmgt/stock_detail.html'
     context_object_name = 'items'
 
 class StockUpdateView(UpdateView):
     model = Stock
     fields = ["opening_stck"]
+
+class StockDeleteView(DeleteView):
+    model = Stock
 
 
 def home(request):
@@ -31,6 +33,6 @@ def details(request):
         query_set = Stock.objects.filter(item_no__icontains = form['item_no'].value(), color__icontains = form['color'].value())
         context = {'form': form, 'items': query_set}
 
-    return render(request, 'stckmgt/stock_detail.html', context)
+    return render(request, 'stckmgt/stock_list.html', context)
     
     

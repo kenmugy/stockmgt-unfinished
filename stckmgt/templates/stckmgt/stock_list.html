@@ -10,7 +10,7 @@
       <th scope="col">item</th>
       <th scope="col">color</th>
       <th scope="col">isssued by</th>
-      <th scope="col">opening stock</th>
+      <th scope="col">Quantity in Store</th>
       <th scope="col">action</th>
     </tr>
   </thead>
@@ -23,6 +23,9 @@
       <td>{{item.opening_stck}}</td>
       <td>
         <a href="{% url 'update' item.pk %}" class="btn btn-success">update</a>
+      </td>
+      <td>
+        <a href="{% url 'delete' item.pk %}" class="btn btn-danger">X</a>
       </td>
     </tr>
     {% endfor %}

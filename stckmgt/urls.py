@@ -1,10 +1,10 @@
 from django.urls import path
-from .views import StockCreateView, StockListView,StockUpdateView, home, details
+from .views import StockCreateView, StockListView,StockUpdateView,StockDeleteView, home, details
 
 urlpatterns = [
     path('', home, name='home'),
     path('add/', StockCreateView.as_view(), name='add'),
-    path('update/<int:pk>', StockUpdateView.as_view(), name='update'),
-    # path('stock_list/', StockListView.as_view(), name='details'),
-    path('stock_list/', details, name='details'),
+    path('<int:pk>/update/', StockUpdateView.as_view(), name='update'),
+    path('<int:pk>/delete/', StockDeleteView.as_view(), name='delete'),
+    path('stock_list/', details, name='list'),
 ]

@@ -13,7 +13,13 @@
             <td>issued by</td>
         </th>
         <tbody>
-            
+            {% for item in items %}
+            <tr>
+                <td>{{item.item_no}}</td>
+                <td>{{item.color}}</td>
+                <td>{{item.issued_by}}</td>
+            </tr>
+            {% endfor %}
         </tbody>
     </table>
 </body>

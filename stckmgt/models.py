@@ -14,8 +14,8 @@ class Stock(models.Model):
     phone_number = models.CharField( max_length=50, blank = True)
     last_updated = models.DateTimeField( auto_now=True, auto_now_add=False)
 
-    # def get_absolute_url(self):
-    #     return reverse('detail', kwargs={'pk': self.pk})
+    def get_absolute_url(self):
+        return reverse('home')
 
     def __str__(self):
         return f"item: {self.item_no} | Color: {self.color}"

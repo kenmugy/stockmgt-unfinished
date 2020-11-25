@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
+from django.utils import timezone
+
 # from itemDb import ItemModel
 
 # Create your models here.
@@ -31,15 +33,17 @@ class Category(models.Model):
 
 class Stock(models.Model):
     item_no = models.CharField(max_length=50, choices = item_choices, blank = False, null = True)
-    # category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
     color = models.CharField( max_length=55, blank = False, null = True)
     quantity = models.IntegerField("Quantity MTS",default=0 )
-    opening_stck = models.IntegerField(default=0 )
+    opening_stck = models.IntegerField("Quantity in Store",default=0 )
     closing_stck = models.IntegerField(default=0 )
     issued_by = models.ForeignKey(User, on_delete=models.CASCADE, default=User, null=True)
-    issued_to = models.CharField("Issued to",max_length=50, blank= True)
+    issued_to = models.CharField("Issued to",max_length=50, blank= False)
     phone_number = models.CharField( max_length=50, blank = True)
+    created = models.DateTimeField( auto_now=False, auto_now_add=True)
     last_updated = models.DateTimeField( auto_now=True, auto_now_add=False)
+    # recieved_date = models.DateTimeField( auto_now=False, auto_now_add=False, blank=True)
 
     def get_absolute_url(self):
         return reverse('list')

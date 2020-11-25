@@ -17,12 +17,12 @@
   <tbody>
     {% for item in items %}
     <tr>
-      <td><a href="{% url 'detail' item.pk %}">{{item.item_no}}</a></td>
+      <td><a href="{% url 'detail' item.pk %}">{{item.category}}</a></td>
       <td>{{item.color}}</td>
       <td>{{item.issued_by}}</td>
       <td>{{item.opening_stck}}</td>
       <td>
-        <a href="{% url 'update' item.pk %}" class="btn btn-success">update</a>
+        <a href="{% url 'update' item.pk %}" class="btn btn-success">Issue/Recieve</a>
       </td>
       <td>
         <a href="{% url 'delete' item.pk %}" class="btn btn-danger">X</a>

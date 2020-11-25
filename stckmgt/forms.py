@@ -4,7 +4,7 @@ from .models import Stock
 class AddItemForm(forms.ModelForm):
     class Meta:
         model = Stock
-        fields = ['item_no', 'color', 'quantity', 'issued_by']
+        fields = ["category", "color", "quantity","opening_stck","issued_to" ,"phone_number","issued_by"]
 
     def clean_opening_stck(self):
         opening_stck = self.cleaned_data.get("opening_stck")
@@ -25,12 +25,12 @@ class AddItemForm(forms.ModelForm):
         return item_no
         
     
-    def clean_color(self):
-        color = self.cleaned_data("color")
-        if not color:
-            raise forms.ValidationError('This field cannot be null')
+    # def clean_color(self):
+    #     color = self.cleaned_data("color")
+    #     if not color:
+    #         raise forms.ValidationError('This field cannot be null')
         
-        return color
+    #     return color
 
 
 class SearchItemForm(forms.ModelForm):
